@@ -1,0 +1,111 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+int V[4][5], A[4][5];
+int i,j;
+
+void M_Manual(){
+   
+    // Prenchendo a matriz V[][]
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+        printf("Digite os valores da Matriz V[%d][%d]",i,j);
+        scanf("%d", &V[i][j]);
+        }
+    }
+    // Prenchendo a matriz A[][]
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+        printf("\nDigite os valores da Matriz A[%d][%d]",i,j);
+        scanf("%d", &A[i][j]);
+        }
+    }
+    // Apresentado a matriz V[][]
+   printf("Apresentado a matriz B[i][j]");
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+        printf("\nV[%d][%d] = %d\t",i,j,V[i][j]);
+        }
+        printf("\n");
+    }
+    // Apresentado a matriz A[][]
+   printf("\n");
+   printf("Apresentado a matriz A[i][j]");
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+         printf("\nA[%d][%d] = %d\t",i,j,A[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void M_Aleatorio(){
+    
+
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+        V[i][j]= rand() % 100;
+        }
+     
+    }
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+        A[i][j]= rand() % 50;
+        }
+        
+    }
+    
+    printf("Apresentado a matriz V[i][j]\n");
+    printf("############################\n\n");
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+        printf("V[%d][%d] = %d\t",i,j,V[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("Apresentado a matriz A[i][j]\n");
+    printf("############################\n");
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+        printf("\nA[%d][%d] = %d",i,j,A[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+
+int main(){
+    
+    printf("========================================================\n\n");
+    printf("Escolha como deseja Visualizar/Ultilizar o Vetor Matriz.\n\n");
+    printf("========================================================\n\n");
+    printf("(1) - Matriz Aleatoria\n(2) - Matriz Manual\n\n\tDigite S para Sair.\n");
+    printf("_______________________\n\nOpção: ");
+    int op;
+    char c='s';
+    scanf("%d%c", &op, &c);
+   
+   switch(c){
+      case 's':
+        printf("=====================================\n");
+        printf("\tFim do Programa.!!\n");
+        printf("=====================================");
+        break;
+        }
+    switch(op){
+       
+        case 1:
+            M_Manual();
+        break;
+        
+        case 2:
+            M_Aleatorio();
+        break;
+        
+   }
+ 
+}
